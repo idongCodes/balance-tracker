@@ -60,7 +60,7 @@ html {
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: sans-serif, system-ui;
   background: #fff;
   color: #222;
   min-height: 100vh;
