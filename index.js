@@ -19,6 +19,8 @@
 - add button attributes
 - add button text
 - append button to DOM
+- create updBal() method
+- get values from inputs
 */
 
 const createEl = (elementType) => { 
@@ -74,7 +76,7 @@ instructions.textContent = "Add how much was taken from or added to the balance,
 formContainer.textContent = "This will hold the form";
 formHeader.textContent = "This will hold form Header";
 formTitle.textContent = "Current Balance:";
-balance.textContent = `$${5005.47}`;
+balance.textContent = 5005.47;
 form.textContent = "This is the form";
 formGroupOne.textContent = "Form group one";
 formGroupTwo.textContent = "Form group two";
@@ -98,3 +100,20 @@ formGroupTwo.appendChild(subLabel)
 formGroupOne.appendChild(addInput);
 formGroupTwo.appendChild(subInput);
 form.appendChild(updateBalance);
+
+const updBal = () => {
+    let currentBalance = parseFloat(balance.textContent);
+    let addToBal = parseFloat(document.querySelector('#addition').value);
+    let subFromBal = parseFloat(document.querySelector('#subtraction').value);
+
+    if (addToBal) {
+        balance.textContent = currentBalance + addToBal;
+        document.querySelector('#addition').value = "";
+    };
+
+    if (subFromBal) {
+        balance.textContent = currentBalance - subFromBal;
+        document.querySelector('#subtraction').value = "";
+    }
+    
+};
