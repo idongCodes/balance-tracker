@@ -44,6 +44,23 @@ const addInput = createEl('input');
 const subInput = createEl('input');
 const updateBalance = createEl('button');
 
+const updBal = () => {
+    let currentBalance = parseFloat(balance.textContent);
+    let addToBal = parseFloat(document.querySelector('#addition').value);
+    let subFromBal = parseFloat(document.querySelector('#subtraction').value);
+
+    if (addToBal) {
+        balance.textContent = currentBalance + addToBal;
+        document.querySelector('#addition').value = "";
+    };
+
+    if (subFromBal) {
+        balance.textContent = currentBalance - subFromBal;
+        document.querySelector('#subtraction').value = "";
+    }
+    
+};
+
 main.setAttribute('id', 'main-container');
 header.setAttribute('id', 'header');
 title.setAttribute('class', 'title');
@@ -100,20 +117,3 @@ formGroupTwo.appendChild(subLabel)
 formGroupOne.appendChild(addInput);
 formGroupTwo.appendChild(subInput);
 form.appendChild(updateBalance);
-
-const updBal = () => {
-    let currentBalance = parseFloat(balance.textContent);
-    let addToBal = parseFloat(document.querySelector('#addition').value);
-    let subFromBal = parseFloat(document.querySelector('#subtraction').value);
-
-    if (addToBal) {
-        balance.textContent = currentBalance + addToBal;
-        document.querySelector('#addition').value = "";
-    };
-
-    if (subFromBal) {
-        balance.textContent = currentBalance - subFromBal;
-        document.querySelector('#subtraction').value = "";
-    }
-    
-};
